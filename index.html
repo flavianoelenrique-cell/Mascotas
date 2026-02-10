@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema para reportar y encontrar mascotas perdidas. Ayuda a reunir a las mascotas con sus dueños.">
+  <title>Mascotas Perdidas y Encontradas | Encuentra a tu compañero</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🐾</span>
+        <span>PetFinder</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="reportar.html" class="nav-link">Reportar Mascota</a>
+        <a href="reportar.html" class="btn btn-primary btn-sm">
+          <span>+</span> Nueva Publicación
+        </a>
+      </nav>
+      
+      <button class="mobile-menu-btn" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">
+        Ayudamos a reunir <span class="text-gradient">mascotas</span> <br>con sus familias
+      </h1>
+      <p class="hero-subtitle">
+        Publica mascotas perdidas o encontradas y conecta con personas que pueden ayudarte a encontrar o devolver a esos compañeros peludos.
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number" id="stat-total">0</div>
+          <div class="stat-label">Publicaciones</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="stat-perdidas">0</div>
+          <div class="stat-label">Perdidas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="stat-encontradas">0</div>
+          <div class="stat-label">Encontradas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters Section -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters-container">
+        <div class="filters-row">
+          <div class="filter-group" style="flex: 2;">
+            <label class="filter-label">Tipo de reporte</label>
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-tipo="todas">Todas</button>
+              <button class="filter-tab" data-tipo="perdida">🔍 Perdidas</button>
+              <button class="filter-tab" data-tipo="encontrada">✓ Encontradas</button>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label" for="filter-especie">Especie</label>
+            <select class="form-select" id="filter-especie">
+              <option value="todas">Todas las especies</option>
+              <option value="perro">🐕 Perros</option>
+              <option value="gato">🐈 Gatos</option>
+              <option value="otro">🐾 Otros</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label" for="search-input">Buscar</label>
+            <div class="search-input">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="form-input" id="search-input" placeholder="Nombre, raza, ubicación...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <div class="container">
+      <div class="cards-header">
+        <h2>Mascotas Publicadas</h2>
+        <span class="cards-count" id="pets-count">0 mascotas</span>
+      </div>
+      
+      <div class="cards-grid" id="pets-grid">
+        <!-- Las tarjetas se cargan dinámicamente -->
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p class="footer-text">
+        © 2026 PetFinder. Ayudando a reunir familias. 🐾
+      </p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Sobre nosotros</a>
+        <a href="#" class="footer-link">Contacto</a>
+        <a href="#" class="footer-link">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
